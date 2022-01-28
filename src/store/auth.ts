@@ -48,10 +48,12 @@ async function getSession(
   isInteractiveSignIn: boolean = false,
   includeDeleteRepoScope: boolean = false
 ) {
-  const scopes = [GIST_SCOPE, REPO_SCOPE];
-  if (includeDeleteRepoScope) {
-    scopes.push(DELETE_REPO_SCOPE);
-  }
+    // tev: remove repo scope for auth
+//   const scopes = [GIST_SCOPE, REPO_SCOPE];
+  const scopes = [GIST_SCOPE];
+//   if (includeDeleteRepoScope) {
+//     scopes.push(DELETE_REPO_SCOPE);
+//   }
 
   try {
     if (isInteractiveSignIn) {
